@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,12 +21,15 @@ class RequestToServerActivity : AppCompatActivity() {
     val context: Context = this
     var newsRVAdapter: NewsRVAdapter? = null
     var pb_loading: ProgressBar? = null
+    var imv_back: ImageView? = null
     var rv: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_request_to_server)
         initView(window.decorView);
+        onClick()
+
 
         val newsServerController = NewsServerController().getNews(object :
             OnObjectServerCallback<NewsModel>() {
@@ -55,6 +59,12 @@ class RequestToServerActivity : AppCompatActivity() {
 
         })
 
+    }
+
+    private fun onClick() {
+        imv_back?.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initView(view: View) {
