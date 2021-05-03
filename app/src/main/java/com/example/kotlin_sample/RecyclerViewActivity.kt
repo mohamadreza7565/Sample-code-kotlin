@@ -8,21 +8,20 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kotlin_sample.adapters.rv.UserListAdapter
+import com.example.kotlin_sample.adapters.rv.UsersRVAdapter
 import com.example.kotlin_sample.general.JsonReader
 import com.example.kotlin_sample.models.DataModel
 import com.example.kotlin_sample.models.UserModel
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_recycler_view.view.*
-import kotlinx.android.synthetic.main.fragment_one_layout.view.*
 import kotlinx.android.synthetic.main.fragment_one_layout.view.rv
 
-class RecyclerViewActivity : AppCompatActivity(), UserListAdapter.OnItemClickListener {
+class RecyclerViewActivity : AppCompatActivity(), UsersRVAdapter.OnItemClickListener {
 
     var context: Context = this
     var rv: RecyclerView? = null
     var imv_back: ImageView? = null
-    var adapter: UserListAdapter? = null
+    var adapter: UsersRVAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +33,7 @@ class RecyclerViewActivity : AppCompatActivity(), UserListAdapter.OnItemClickLis
         val dataModel: DataModel = Gson().fromJson(json, DataModel::class.java)
 
         rv?.layoutManager = LinearLayoutManager(context)
-        adapter = UserListAdapter(context, dataModel.userModels, this)
+        adapter = UsersRVAdapter(context, dataModel.userModels, this)
         rv?.adapter = adapter
 
     }

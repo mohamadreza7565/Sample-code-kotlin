@@ -6,14 +6,10 @@
             android:icon="@drawable/ic_person"
             android:title="Users" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_wallpaper"
             android:icon="@drawable/ic_gallery"
             android:title="Gallery" />
 
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_settings"
-            android:title="Settings" />
 
     </group>
 </menu>

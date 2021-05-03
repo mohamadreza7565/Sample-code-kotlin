@@ -8,8 +8,7 @@ import android.widget.ImageView
 import androidx.viewpager.widget.ViewPager
 import com.example.kotlin_sample.adapters.vp.ViewPagerAdapter
 import com.example.kotlin_sample.fragments.UsersFragment
-import com.example.kotlin_sample.fragments.ThreeFragment
-import com.example.kotlin_sample.fragments.TwoFragment
+import com.example.kotlin_sample.fragments.WallpapersFragment
 import com.example.kotlin_sample.models.ViewPagerModel
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_view_pager.view.*
@@ -21,8 +20,7 @@ class ViewPagerActivity : AppCompatActivity() {
     var tabLayout: TabLayout? = null
     var imv_back: ImageView? = null
     val usersFragment = UsersFragment().newInstance()
-    val twoFragment = TwoFragment().newInstance()
-    val threeFragment = ThreeFragment().newInstance()
+    val wallpapersFragment = WallpapersFragment().newInstance()
     val arrayList = ArrayList<ViewPagerModel>()
 
 
@@ -33,8 +31,7 @@ class ViewPagerActivity : AppCompatActivity() {
         onClick()
 
         arrayList.add(ViewPagerModel("Users", usersFragment))
-        arrayList.add(ViewPagerModel("Gallery", twoFragment))
-        arrayList.add(ViewPagerModel("Settings", threeFragment))
+        arrayList.add(ViewPagerModel("Wallpapers", wallpapersFragment))
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager, arrayList)
         viewPager?.adapter = viewPagerAdapter
         tabLayout?.setupWithViewPager(viewPager)

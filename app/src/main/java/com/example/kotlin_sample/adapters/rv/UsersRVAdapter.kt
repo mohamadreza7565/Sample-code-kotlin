@@ -5,17 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.kotlin_sample.R
-import com.example.kotlin_sample.general.loadImage
 import com.example.kotlin_sample.models.UserModel
 import kotlinx.android.synthetic.main.user_rv_items.view.*
 
-class UserListAdapter(
+class UsersRVAdapter(
     val context: Context,
-    val userModels: ArrayList<UserModel>,
-    val onItemClickListener: OnItemClickListener
+    val list: ArrayList<UserModel>,
+    val onItemClickListener: OnItemClickListener,
 ) :
-    RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
+    RecyclerView.Adapter<UsersRVAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
@@ -24,15 +25,15 @@ class UserListAdapter(
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(userModels[position])
+        holder.bind(list[position],context)
 
         holder.itemView.setOnClickListener {
-            onItemClickListener.onItemClick(position, userModels[position])
+            onItemClickListener.onItemClick(position, list[position])
         }
 
     }
 
-    override fun getItemCount() = userModels.size
+    override fun getItemCount() = list.size
 
     class ViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
@@ -42,10 +43,19 @@ class UserListAdapter(
         private val userEmail = view.email
 
 
-        fun bind(country: UserModel) {
-            userName.text = country.firstName + " " + country.lastName
-            userEmail.text = country.email
-            imageView.loadImage(country.avatar)
+        fun bind(item: UserModel, context: Context) {
+            userName.text = item.firstName + " " + item.lastName
+            userEmail.text = item.email
+
+            val options = RequestOptions()
+                .placeholder(R.drawable.ic_person)
+                .circleCrop()
+                .error(R.drawable.ic_person)
+            Glide.with(context)
+                .setDefaultRequestOptions(options)
+                .load(item.avatar)
+                .into(imageView)
+
         }
 
 

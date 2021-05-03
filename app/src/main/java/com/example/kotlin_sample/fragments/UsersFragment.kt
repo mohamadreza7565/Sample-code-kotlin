@@ -9,17 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_sample.R
-import com.example.kotlin_sample.adapters.rv.UserListAdapter
+import com.example.kotlin_sample.adapters.rv.UsersRVAdapter
 import com.example.kotlin_sample.general.JsonReader
 import com.example.kotlin_sample.models.DataModel
 import com.example.kotlin_sample.models.UserModel
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_one_layout.view.*
 
-class UsersFragment : Fragment(), UserListAdapter.OnItemClickListener {
+class UsersFragment : Fragment(), UsersRVAdapter.OnItemClickListener {
 
     var rv: RecyclerView? = null
-    var adapter: UserListAdapter? = null
+    var adapter: UsersRVAdapter? = null
 
     fun newInstance(): UsersFragment {
         val args = Bundle()
@@ -42,7 +42,7 @@ class UsersFragment : Fragment(), UserListAdapter.OnItemClickListener {
         val dataModel: DataModel = Gson().fromJson(json, DataModel::class.java)
 
         rv?.layoutManager = LinearLayoutManager(context)
-        adapter = UserListAdapter(requireContext(), dataModel.userModels, this)
+        adapter = UsersRVAdapter(requireContext(), dataModel.userModels, this)
         rv?.adapter = adapter
     }
 

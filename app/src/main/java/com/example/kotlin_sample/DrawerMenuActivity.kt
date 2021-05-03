@@ -13,8 +13,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.kotlin_sample.adapters.rv.DrawerMenuRVAdapter
 import com.example.kotlin_sample.adapters.vp.ViewPagerAdapter
 import com.example.kotlin_sample.fragments.UsersFragment
-import com.example.kotlin_sample.fragments.ThreeFragment
-import com.example.kotlin_sample.fragments.TwoFragment
+import com.example.kotlin_sample.fragments.WallpapersFragment
 import com.example.kotlin_sample.models.DrawerMenuModel
 import com.example.kotlin_sample.models.ViewPagerModel
 import kotlinx.android.synthetic.main.activity_drawer_menu.view.*
@@ -31,8 +30,7 @@ class DrawerMenuActivity : AppCompatActivity(), DrawerMenuRVAdapter.OnItemClickL
     var drawerItems = ArrayList<DrawerMenuModel>()
     var fragments = ArrayList<ViewPagerModel>()
     val usersFragment = UsersFragment().newInstance()
-    val twoFragment = TwoFragment().newInstance()
-    val threeFragment = ThreeFragment().newInstance()
+    val wallpapersFragment = WallpapersFragment().newInstance()
     var drawerMenuRVAdapter: DrawerMenuRVAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,8 +46,7 @@ class DrawerMenuActivity : AppCompatActivity(), DrawerMenuRVAdapter.OnItemClickL
 
     private fun initViewPager() {
         fragments.add(ViewPagerModel("Users", usersFragment))
-        fragments.add(ViewPagerModel("Gallery", twoFragment))
-        fragments.add(ViewPagerModel("Settings", threeFragment))
+        fragments.add(ViewPagerModel("Wallpapers", wallpapersFragment))
 
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager, fragments)
         view_pager?.adapter = viewPagerAdapter
@@ -57,8 +54,7 @@ class DrawerMenuActivity : AppCompatActivity(), DrawerMenuRVAdapter.OnItemClickL
 
     private fun initDrawer() {
         drawerItems.add(DrawerMenuModel(true, "Users", R.drawable.ic_person))
-        drawerItems.add(DrawerMenuModel(false, "Gallery", R.drawable.ic_gallery))
-        drawerItems.add(DrawerMenuModel(false, "Settings", R.drawable.ic_settings))
+        drawerItems.add(DrawerMenuModel(false, "Wallpapers", R.drawable.ic_gallery))
         rv_navigation?.layoutManager = LinearLayoutManager(context)
         drawerMenuRVAdapter = DrawerMenuRVAdapter(context, drawerItems, this)
         rv_navigation?.adapter = drawerMenuRVAdapter

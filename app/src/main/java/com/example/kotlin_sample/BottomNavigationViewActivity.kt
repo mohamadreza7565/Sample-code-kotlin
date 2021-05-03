@@ -10,8 +10,7 @@ import android.widget.ImageView
 import androidx.viewpager.widget.ViewPager
 import com.example.kotlin_sample.adapters.vp.ViewPagerAdapter
 import com.example.kotlin_sample.fragments.UsersFragment
-import com.example.kotlin_sample.fragments.ThreeFragment
-import com.example.kotlin_sample.fragments.TwoFragment
+import com.example.kotlin_sample.fragments.WallpapersFragment
 import com.example.kotlin_sample.models.ViewPagerModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
@@ -26,8 +25,7 @@ class BottomNavigationViewActivity : AppCompatActivity(),
     var cb_smooth: CheckBox? = null
     var imv_back: ImageView? = null
     val usersFragment = UsersFragment().newInstance()
-    val twoFragment = TwoFragment().newInstance()
-    val threeFragment = ThreeFragment().newInstance()
+    val wallpapersFragment = WallpapersFragment().newInstance()
     val arrayList = ArrayList<ViewPagerModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,9 +34,8 @@ class BottomNavigationViewActivity : AppCompatActivity(),
         initView(window.decorView)
         onClick()
 
-        arrayList.add(ViewPagerModel("شماره 1", usersFragment))
-        arrayList.add(ViewPagerModel("شماره 2", twoFragment))
-        arrayList.add(ViewPagerModel("شماره 3", threeFragment))
+        arrayList.add(ViewPagerModel("Users", usersFragment))
+        arrayList.add(ViewPagerModel("Wallpapers", wallpapersFragment))
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager, arrayList)
         viewPager?.adapter = viewPagerAdapter
 
@@ -65,19 +62,15 @@ class BottomNavigationViewActivity : AppCompatActivity(),
             when (item.itemId) {
                 R.id.nav_user ->
                     viewPager?.currentItem = 0
-                R.id.nav_gallery ->
+                R.id.nav_wallpaper ->
                     viewPager?.currentItem = 1
-                R.id.nav_manage ->
-                    viewPager?.currentItem = 2
             }
         } else {
             when (item.itemId) {
                 R.id.nav_user ->
                     viewPager?.setCurrentItem(0, false)
-                R.id.nav_gallery ->
+                R.id.nav_wallpaper ->
                     viewPager?.setCurrentItem(1, false)
-                R.id.nav_manage ->
-                    viewPager?.setCurrentItem(2, false)
             }
         }
 
