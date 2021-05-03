@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBlue"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imv_info"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_info"
+                app:tint="@color/white" />
+
+            <com.example.kotlin_sample.widgets.TextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Kotlin Sample Codes"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_rv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#F44336"
+                android:text="RecyclerView"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_vp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#FF5722"
+                android:text="ViewPager"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_btm_nav"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#FF9800"
+                android:text="Buttom navigation view"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#FFC107"
+                android:text="Drawer menu"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_server"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#8BC34A"
+                android:text="Request to server"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_notif"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#4CAF50"
+                android:text="Notification"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_anim"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#009688"
+                android:text="Animations"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+
+            <com.example.kotlin_sample.widgets.ButtonBold
+                android:id="@+id/btn_map"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#00BCD4"
+                android:text="Google map"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

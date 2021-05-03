@@ -1,0 +1,43 @@
+{
+  "page": 1,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+      "id": 1,
+      "email": "engineer.it93@gmail.com",
+      "first_name": "Mohammadreza",
+      "last_name": "Allahgholi",
+      "avatar": "file:///android_asset/profile.jpg"
+    },
+    {
+      "id": 1,
+      "email": "bill_gates@reqres.in",
+      "first_name": "William",
+      "last_name": "Henry Gates",
+      "avatar": "https://likewise-stage.azureedge.net/uploads/3eb6cf23-895b-45e9-b92c-5fb1b457dd04/bill-gates-profile-pic.jpg"
+    },
+    {
+      "id": 1,
+      "email": "george.bluth@reqres.in",
+      "first_name": "Steve",
+      "last_name": "Jobs",
+      "avatar": "https://cdn.vox-cdn.com/thumbor/ElnzjjbS376s3BFUCnFrsyjBArA=/0x86:706x557/1400x1050/filters:focal(0x86:706x557):format(png)/cdn.vox-cdn.com/assets/738480/stevejobs.png"
+    },
+    {
+      "id": 1,
+      "email": "Pavel_durov@reqres.in",
+      "first_name": "Pavel",
+      "last_name": "Durov",
+      "avatar": "https://www.itna.ir/images/docs/000050/n00050982-b.jpg"
+    },
+    {
+      "id": 1,
+      "email": "Elliot_Zuckerberg@reqres.in",
+      "first_name": "Mark",
+      "last_name": "Elliot Zuckerberg",
+      "avatar": "https://bazaracademy.ir/blog/wp-content/uploads/2018/10/2-3.jpg"
+    }
+  ]
+}
