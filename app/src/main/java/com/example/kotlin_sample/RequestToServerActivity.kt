@@ -70,5 +70,6 @@ class RequestToServerActivity : AppCompatActivity() {
     private fun initView(view: View) {
         rv = view.rv
         pb_loading = view.pb_loading
+        imv_back = view.imv_back
     }
 }
