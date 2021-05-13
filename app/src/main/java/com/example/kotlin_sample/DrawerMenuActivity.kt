@@ -90,6 +90,13 @@ class DrawerMenuActivity : AppCompatActivity(), DrawerMenuRVAdapter.OnItemClickL
     override fun onItemClick(position: Int, drawerMenuModel: DrawerMenuModel) {
         view_pager?.setCurrentItem(position, false)
         drawer_layout?.closeDrawer(Gravity.LEFT)
+
+        for (i in 0..(drawerItems.size - 1)) {
+            drawerItems[i].selected = false
+        }
+        drawerItems[position].selected = true
+        drawerMenuRVAdapter?.notifyDataSetChanged()
+
     }
 
 }

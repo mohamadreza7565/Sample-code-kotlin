@@ -23,7 +23,7 @@ class DrawerMenuRVAdapter(
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(list[position],context)
+        holder.bind(list[position], context)
 
         holder.itemView.setOnClickListener {
             onItemClickListener.onItemClick(position, list[position])
@@ -39,14 +39,14 @@ class DrawerMenuRVAdapter(
         val tv_title = view.tv_title
         val rl_item = view.rl_item
 
-        fun bind(item: DrawerMenuModel,context: Context) {
+        fun bind(item: DrawerMenuModel, context: Context) {
             tv_title.text = item.title
             imv_icon.setImageResource(item.icon)
-//            if (item.selected){
-//                rl_item.setBackgroundColor(context.resources.getColor(R.color.colorBlueTransparent))
-//            }else{
-//                rl_item.setBackgroundColor(context.resources.getColor(R.color.colorBlueTransparent))
-//            }
+            if (item.selected) {
+                rl_item.setBackgroundColor(context.resources.getColor(R.color.colorBlueTransparent))
+            } else {
+                rl_item.setBackgroundColor(context.resources.getColor(R.color.white))
+            }
         }
 
     }
