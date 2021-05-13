@@ -27,7 +27,7 @@ class RequestToServerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_request_to_server)
-        initView(window.decorView);
+        initView(window.decorView)
         onClick()
 
 

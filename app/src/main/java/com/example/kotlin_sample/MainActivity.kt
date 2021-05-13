@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
-    var context: Context = this
+    val context: Context = this
     var btn_rv: Button? = null
     var btn_vp: Button? = null
     var btn_btm_nav: Button? = null
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView(window.decorView)
         onClick()
+
     }
 
     private fun onClick() {

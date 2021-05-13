@@ -6,13 +6,7 @@ import android.graphics.Typeface
 
 class Fonts(val context: Context, val font: String) {
 
-    private var typeface: Typeface? = null
-
-
-    fun getTypeface(): Typeface? {
-        typeface = Typeface.createFromAsset(context.assets, DIRECTORY_FONT + "/" + font)
-        return typeface
-    }
-
+    fun getTypeface(): Typeface =
+        Typeface.createFromAsset(context.assets, DIRECTORY_FONT + "/" + font)
 
 }
